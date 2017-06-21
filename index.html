@@ -15,8 +15,8 @@
 			{
 				var canVibrate = "vibrate" in navigator || "mozVibrate" in navigator;
 
-				if (canVibrate && !(!"vibrate" in navigator))
-					navigator.vibrate = navigator.mozVibrate;
+				if (canVibrate && !("vibrate" in navigator))
+				    navigator.vibrate = navigator.mozVibrate;
 				
 				navigator.vibrate(1000);
 			}
