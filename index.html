@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Vibration</title>
+		<style>
+			
+			body {
+				text-align: center;
+			}
+
+		</style>
+
+		<script>
+			function vibratePhone() 
+			{
+				navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
+				if (navigator.vibrate) 
+				{
+					navigator.Vibrate([500,300,100]);
+				}
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+		<br/><br/><br/><br/>
+		<h2>VIBRATION</h2>
+		<button onClick="vibratePhone()">Vibrate</button>
+
+		<script>
+			for (var i = 0; i < 10; i++)
+			{
+				if (i%2 == 0) 
+				{
+					alert(i + " faces")
+					vibratePhone();
+				}
+			}
+		</script>
+
+	</body>
+</html>
