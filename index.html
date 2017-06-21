@@ -13,12 +13,12 @@
 		<script>
 			function vibratePhone() 
 			{
-				navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+				var canVibrate = "vibrate" in navigator || "mozVibrate" in navigator;
 
-				if (navigator.vibrate) 
-				{
-					navigator.Vibrate([500,300,100]);
-				}
+				if (canVibrate && !(!"vibrate" in navigator))
+					navigator.vibrate = navigator.mozVibrate;
+				
+				navigator.vibrate(1000);
 			}
 
 		</script>
